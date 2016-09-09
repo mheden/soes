@@ -1,0 +1,16 @@
+language: c
+sudo: false # only for faster builds
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+
+before_script:
+  - wget https://raw.githubusercontent.com/mheden/OpenEtherCATsociety.github.io/master/scripts/check_cla.sh
+  - wget https://raw.githubusercontent.com/mheden/OpenEtherCATsociety.github.io/master/data/contributors.txt
+  - chmod +x check_cla.sh
+
+script:
+  - ./check_cla.sh
+
